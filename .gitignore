@@ -1,0 +1,4 @@
+﻿.env
+comiccraft-env/
+__pycache__/
+*.pyc

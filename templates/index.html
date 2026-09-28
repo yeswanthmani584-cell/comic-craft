@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComicCraft - Create Your Comic</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+                        url('[https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1600&q=80](https://images.unsplash.com/photo-1511497584788-87676104235f?auto=format&fit=crop&w=1600&q=80)') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 520px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .card h2 {
+            margin-bottom: 20px;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .form-group { margin-bottom: 16px; }
+        label { display: block; font-weight: 600; margin-bottom: 6px; color: #334155; font-size: 14px; }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #1e293b;
+        }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: #2563eb; }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0284c7;
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        button:hover { background-color: #0369a1; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>✏️ Create Your Comic</h2>
+        <form action="/generate" method="post">
+            <div class="form-group">
+                <label for="prompt">Story Prompt:</label>
+                <textarea id="prompt" name="prompt" rows="3" placeholder="A college student named Arjun discovers a mysterious watch inside an abandoned lab..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="character_name">Main Character Name:</label>
+                <input type="text" id="character_name" name="character_name" placeholder="Arjun" required>
+            </div>
+            <div class="form-group">
+                <label for="setting">Setting:</label>
+                <select id="setting" name="setting">
+                    <option value="Forest">Forest</option>
+                    <option value="School">School</option>
+                    <option value="Space">Space</option>
+                    <option value="City">City</option>
+                    <option value="Laboratory">Laboratory</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tone">Story Tone:</label>
+                <select id="tone" name="tone">
+                    <option value="Dramatic">Dramatic</option>
+                    <option value="Funny">Funny</option>
+                    <option value="Light-hearted">Light-hearted</option>
+                    <option value="Poetic">Poetic</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="style">Art Style:</label>
+                <select id="style" name="style">
+                    <option value="Comic Book">Comic Book</option>
+                    <option value="Anime">Anime</option>
+                    <option value="Pixel Art">Pixel Art</option>
+                    <option value="Realistic">Realistic</option>
+                </select>
+            </div>
+            <button type="submit">Generate Comic</button>
+        </form>
+    </div>
+</body>
+</html>
